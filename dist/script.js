@@ -18,10 +18,10 @@ class MyClass {
         var Module = {};
         Module['canvas'] = document.getElementById('canvas');
         window['Module'] = Module;
-        document.getElementById('file-upload').addEventListener('change', this.uploadRom.bind(this));
-        document.getElementById('file-upload-eep').addEventListener('change', this.uploadEep.bind(this));
-        document.getElementById('file-upload-sra').addEventListener('change', this.uploadSra.bind(this));
-        document.getElementById('file-upload-fla').addEventListener('change', this.uploadFla.bind(this));
+        // document.getElementById('file-upload').addEventListener('change', this.uploadRom.bind(this));
+        // document.getElementById('file-upload-eep').addEventListener('change', this.uploadEep.bind(this));
+        // document.getElementById('file-upload-sra').addEventListener('change', this.uploadSra.bind(this));
+        // document.getElementById('file-upload-fla').addEventListener('change', this.uploadFla.bind(this));
 
 
         this.rivetsData = {
@@ -89,13 +89,13 @@ class MyClass {
         }
 
 
-        if (window["ROMLIST"].length > 0)
-        {
-            this.rivetsData.hasRoms = true;
-            window["ROMLIST"].forEach(rom => {
-                this.rivetsData.romList.push(rom);
-            });
-        }
+        // if (window["ROMLIST"].length > 0)
+        // {
+        //     this.rivetsData.hasRoms = true;
+        //     window["ROMLIST"].forEach(rom => {
+        //         this.rivetsData.romList.push(rom);
+        //     });
+        // }
 
         rivets.formatters.ev = function (value, arg) {
             return eval(value + arg);
@@ -105,17 +105,17 @@ class MyClass {
             return eval(eval_string);
         }
 
-        rivets.bind(document.getElementById('topPanel'), { data: this.rivetsData });
-        rivets.bind(document.getElementById('bottomPanel'), { data: this.rivetsData });
-        rivets.bind(document.getElementById('loginModal'), { data: this.rivetsData });
-        rivets.bind(document.getElementById('buttonsModal'), { data: this.rivetsData });
-        rivets.bind(document.getElementById('lblError'), { data: this.rivetsData });
+        // rivets.bind(document.getElementById('topPanel'), { data: this.rivetsData });
+        // rivets.bind(document.getElementById('bottomPanel'), { data: this.rivetsData });
+        // rivets.bind(document.getElementById('loginModal'), { data: this.rivetsData });
+        // rivets.bind(document.getElementById('buttonsModal'), { data: this.rivetsData });
+        // rivets.bind(document.getElementById('lblError'), { data: this.rivetsData });
         rivets.bind(document.getElementById('mobileBottomPanel'), { data: this.rivetsData });
         rivets.bind(document.getElementById('mobileButtons'), { data: this.rivetsData });
         
         
 
-        this.setupDragDropRom();
+        // this.setupDragDropRom();
         this.detectMobile();
         this.setupLogin();
         this.createDB();
@@ -123,6 +123,8 @@ class MyClass {
 
         $('#topPanel').show();
         $('#lblErrorOuter').show();
+
+        this.load_url("https://cdn.bomberfish.ca/mk64.n64")
         
     }
 
@@ -640,7 +642,7 @@ class MyClass {
     }
 
     resizeCanvas() {
-        $('#canvas').width(this.canvasSize);
+        // $('#canvas').width(this.canvasSize);
     }
 
     zoomOut() {
