@@ -124,7 +124,7 @@ class MyClass {
         $('#topPanel').show();
         $('#lblErrorOuter').show();
 
-        this.load_url("https://github.com/BomberFish/N64Wasm/releases/download/mk64/mk64.z64")
+        this.load_url("https://cdn.bomberfish.ca/mk64.n64")
         
     }
 
